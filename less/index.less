@@ -133,6 +133,14 @@ strong
 {
 	font-weight: 600;
 }
+section
+{
+		margin-bottom: 5%;
+}
+section:last-child
+{
+		margin-bottom: 0;
+}
 
 .horizontal-bar
 {
@@ -181,10 +189,13 @@ html
 		
 		background: #colors[content-backround];
 		color: #colors[main-text];
+		border-radius: 0 0 20px 20px ;
 		.flex();
+		margin-bottom: 4%;
 		.body-content
 		{
-			padding: 2% 4%;
+			
+			padding: 2% 4% 0 4%;
 			width: 90%;
 		}
 	}
@@ -194,7 +205,8 @@ html
 {
 	line-height: 1.7rem;
 	background: #colors[side-bar-background];
-	padding: 2rem 2%;
+	padding: 2rem 2% 0 2%;
+	border-radius: 20px 0;
 	.contact-container
 	{
 		margin-bottom: 2rem;
@@ -225,5 +237,27 @@ html
 	section
 	{
 		margin-bottom: 20%;
+	}
+}
+
+footer
+{
+	nav
+	{
+		margin: 0 auto;
+		padding: 1% 0;
+		max-width: 600px;
+		background: #colors[content-backround];
+		border-radius: 10%;
+		.flex(row);
+		justify-content: center;
+
+	}
+	a
+	{
+		margin: 0 5%;
+		color:black;
+		font-size: 2.0rem;
+		//background: #colors[header-background]
 	}
 }
