@@ -234,6 +234,11 @@ section {
 section:last-child {
   margin-bottom: 0;
 }
+@media screen and (max-width: 800px) {
+  section:last-child {
+    margin-bottom: 5%;
+  }
+}
 .horizontal-bar {
   border: 1px solid black;
   width: 100%;
@@ -313,20 +318,17 @@ html {
 }
 .side-well .contact-container {
   margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: no-wrap;
 }
 .side-well .contact-container .contact-item {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: no-wrap;
   font-size: 1rem;
   justify-content: flex-start;
   align-items: center;
   font-size: 0.9rem;
   line-height: 1rem;
   margin: 0.25rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
 }
 .side-well .contact-container .contact-item .icon {
   border: 1px solid black;
@@ -339,12 +341,18 @@ html {
   align-items: center;
   margin-right: 4%;
 }
+@media screen and (max-width: 800px) {
+  .side-well .contact-container .contact-item {
+    flex-direction: column;
+  }
+}
 .side-well section {
   margin-bottom: 20%;
 }
 @media screen and (max-width: 800px) {
   .side-well section {
-    margin: 2% 5%;
+    margin: 0 1%;
+    text-align: center;
   }
 }
 @media print {
@@ -357,7 +365,15 @@ html {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+  }
+}
+@media screen and (max-width: 450px) {
+  .side-well {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: no-wrap;
+    align-items: center;
   }
 }
 @media print {
@@ -404,7 +420,7 @@ footer a {
     border-right: 0;
     border-left: 0;
     margin: 0;
-    padding: 2% 0;
+    padding: 20px 0;
     text-align: center;
   }
 }
