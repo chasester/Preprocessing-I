@@ -4,6 +4,9 @@
    License: none (public domain)
 */
 
+@import url(font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto|Slabo+27px');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,7 +23,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -57,3 +60,294 @@ html, body {
     height: 100%;
 }
 
+// variables
+@white: white;
+@ShuttleGray: #596578;
+@Voodoo: #553659;
+@Gin: #E0EBE6;
+@Geyser: #D4E3E2;
+
+#colors()
+{
+	background: @ShuttleGray;
+	content-backround: @Geyser;
+	main-text: black;
+	header-text: white;
+	header-background: @Voodoo;
+	side-bar-background: @Gin;
+	side-bar-text: black;
+}
+//main selector defines
+h1
+{
+	font-size: 2.4rem;
+	padding: 2% 0;
+	font-family: 'Roboto', sans-serif;
+	@media print
+	{
+		font-size: 2.0rem;
+	}
+}
+h2 
+{
+	font-size: 1.8rem;
+	padding: 2% 0;
+	font-family: 'Roboto', sans-serif;
+	@media print
+	{
+		font-size: 1.6rem;
+	}
+}
+h3
+{
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding: 1% 0;
+	font-family: 'Merriweather Sans', sans-serif;
+	@media print
+	{
+		font-size: 1rem;
+	}
+}
+h4
+{
+	font-size: 1rem;
+	padding: 1% 0; 	
+	font-family: 'Merriweather Sans', sans-serif;
+	@media print
+	{
+		font-size: 0.9rem;
+	}
+}
+h5
+{
+	font-style: italic;
+	font-weight:  560;
+	font-size: 1.0rem;
+	padding: 1% 0;
+	font-family: 'Merriweather Sans', sans-serif;
+	@media print
+	{
+		font-size: 0.9rem;
+	}
+}
+a 
+{
+	text-decoration: none;
+	color: #colors[main-text];
+	font-weight: 530;
+}
+
+p,li
+{
+	font-size: 1.0rem;
+	@media print
+	{
+		font-size: 0.96rem;
+	}
+}
+ul
+{
+	list-style-type: circle;
+	margin-left: 5%;
+}
+strong
+{
+	font-weight: 600;
+}
+section
+{
+		margin-bottom: 5%;
+}
+section:last-child
+{
+		margin-bottom: 0;
+}
+
+.horizontal-bar
+{
+	border: 1px solid #colors[main-text];
+	width: 100%;
+	margin: 1% 0 ;
+	@media print
+	{
+		display:none;
+	}
+}
+
+html
+{
+	background: #colors[background];
+}
+
+//functions
+.flex(@dir: row, @wrap: no-wrap)
+{
+	display:flex;
+	flex-direction: @dir;
+	flex-wrap: @wrap;
+}
+
+.container
+{
+	.flex(column);
+	max-width: 800px;
+	margin: 0 auto;
+	header
+	{
+		display: inherit;
+		flex-direction: column;
+		align-items: center;
+		background: #colors[header-background];
+		color: #colors[header-text];
+		border-radius: 20px 20px 0 0;
+		margin-top: 20px;
+		padding: 1% 0;
+	
+		.horizontal-bar
+		{
+			border: 1px solid #colors[header-text];
+			width: 25%
+		}
+		@media print 
+		{
+			margin: 0;
+			padding: 0;
+		}
+	}
+	.main-content
+	{
+		
+		background: #colors[content-backround];
+		color: #colors[main-text];
+		border-radius: 0 0 20px 20px ;
+		.flex();
+		margin-bottom: 1%;
+		
+		.body-content
+		{
+			padding: 2% 4% 0 4%;
+			width: 90%;
+			@media screen and (max-width: 800px) 
+			{
+				width: 100%;
+			}
+			@media print
+			{	
+				padding: 0;
+			}
+			
+			
+		}
+		@media screen and (max-width: 800px) 
+		{
+			flex-direction: column;
+			padding: 0;
+			margin: 0;
+			border-radius: 0;
+		}
+	}
+}
+
+.side-well
+{
+	line-height: 1.7rem;
+	background: #colors[side-bar-background];
+	padding: 2rem 2% 0 2%;
+	border-radius: 20px 0;
+	.contact-container
+	{
+		margin-bottom: 2rem;
+		.contact-item
+		{
+			.flex();
+			font-size: 1rem;
+			justify-content: flex-start;
+			align-items: center;
+			font-size: 0.9rem;
+			line-height: 1rem;
+			margin: 0.25rem 0;
+			.icon 
+			{
+				border: 1px solid #colors[side-bar-text];
+				border-radius: 100%;
+				padding: 0.9rem;
+				width: 1rem;
+				height: 1rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: 4%;
+			}
+	
+		}
+		.flex(column);
+		
+	}
+	section
+	{
+		margin-bottom: 20%;
+		@media screen and (max-width: 800px) 
+		{
+			margin: 2% 5%;
+		}
+		@media print
+		{
+			margin: 1%;
+		}
+	}
+	@media  screen and (max-width: 800px) 
+		{
+			.flex(row, wrap);
+			justify-content: center;
+		}
+	@media print
+	{
+		padding: 0 2% 0 1%;
+	}
+}
+
+footer
+{
+	nav
+	{
+		margin: 1% auto;
+		padding: 0.5% 0;
+		max-width: 600px;
+		background: #colors[content-backround];
+		border-radius: 10%;
+		.flex(row);
+		justify-content: center;
+		@media screen and (max-width: 800px) 
+		{
+			max-width: 800px;
+			border-radius: 0;
+			margin: 0;
+			flex-direction: column;
+			padding-top: 3% 0;
+		}
+
+	}
+	a
+	{
+		margin: 0 5%;
+		padding: 0.5% 0.5%;
+		border: 1px solid #colors[main-text];
+		color: #colors[main-text];
+		font-size: 1.8rem;
+		border-radius: 20%;
+		@media print
+		{
+			display: none;
+		}
+		@media screen and (max-width: 800px) 
+		{
+			border-radius: 0;
+			border-right: 0;
+			border-left: 0;
+			margin: 0;
+			padding: 2% 0;
+			text-align: center;
+		}
+	}
+}
