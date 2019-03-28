@@ -158,10 +158,20 @@ h1 {
   padding: 2% 0;
   font-family: 'Roboto', sans-serif;
 }
+@media print {
+  h1 {
+    font-size: 2rem;
+  }
+}
 h2 {
   font-size: 1.8rem;
   padding: 2% 0;
   font-family: 'Roboto', sans-serif;
+}
+@media print {
+  h2 {
+    font-size: 1.6rem;
+  }
 }
 h3 {
   font-size: 1.2rem;
@@ -169,10 +179,20 @@ h3 {
   padding: 1% 0;
   font-family: 'Merriweather Sans', sans-serif;
 }
+@media print {
+  h3 {
+    font-size: 1rem;
+  }
+}
 h4 {
   font-size: 1rem;
   padding: 1% 0;
   font-family: 'Merriweather Sans', sans-serif;
+}
+@media print {
+  h4 {
+    font-size: 0.9rem;
+  }
 }
 h5 {
   font-style: italic;
@@ -180,6 +200,11 @@ h5 {
   font-size: 1rem;
   padding: 1% 0;
   font-family: 'Merriweather Sans', sans-serif;
+}
+@media print {
+  h5 {
+    font-size: 0.9rem;
+  }
 }
 a {
   text-decoration: none;
@@ -189,6 +214,12 @@ a {
 p,
 li {
   font-size: 1rem;
+}
+@media print {
+  p,
+  li {
+    font-size: 0.96rem;
+  }
 }
 ul {
   list-style-type: circle;
@@ -207,6 +238,11 @@ section:last-child {
   border: 1px solid black;
   width: 100%;
   margin: 1% 0 ;
+}
+@media print {
+  .horizontal-bar {
+    display: none;
+  }
 }
 html {
   background: #596578;
@@ -232,6 +268,12 @@ html {
   border: 1px solid white;
   width: 25%;
 }
+@media print {
+  .container header {
+    margin: 0;
+    padding: 0;
+  }
+}
 .container .main-content {
   background: #D4E3E2;
   color: black;
@@ -239,11 +281,29 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: no-wrap;
-  margin-bottom: 4%;
+  margin-bottom: 1%;
 }
 .container .main-content .body-content {
   padding: 2% 4% 0 4%;
   width: 90%;
+}
+@media screen and (max-width: 800px) {
+  .container .main-content .body-content {
+    width: 100%;
+  }
+}
+@media print {
+  .container .main-content .body-content {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .container .main-content {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
 }
 .side-well {
   line-height: 1.7rem;
@@ -282,9 +342,32 @@ html {
 .side-well section {
   margin-bottom: 20%;
 }
+@media screen and (max-width: 800px) {
+  .side-well section {
+    margin: 2% 5%;
+  }
+}
+@media print {
+  .side-well section {
+    margin: 1%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .side-well {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media print {
+  .side-well {
+    padding: 0 2% 0 1%;
+  }
+}
 footer nav {
-  margin: 0 auto;
-  padding: 1% 0;
+  margin: 1% auto;
+  padding: 0.5% 0;
   max-width: 600px;
   background: #D4E3E2;
   border-radius: 10%;
@@ -293,8 +376,35 @@ footer nav {
   flex-wrap: no-wrap;
   justify-content: center;
 }
+@media screen and (max-width: 800px) {
+  footer nav {
+    max-width: 800px;
+    border-radius: 0;
+    margin: 0;
+    flex-direction: column;
+    padding-top: 3% 0;
+  }
+}
 footer a {
   margin: 0 5%;
+  padding: 0.5% 0.5%;
+  border: 1px solid black;
   color: black;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  border-radius: 20%;
+}
+@media print {
+  footer a {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  footer a {
+    border-radius: 0;
+    border-right: 0;
+    border-left: 0;
+    margin: 0;
+    padding: 2% 0;
+    text-align: center;
+  }
 }
